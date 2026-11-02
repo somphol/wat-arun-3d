@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0b0f19">
+<title>Wat Arun 3D — Virtual Riverside Sanctuary &amp; Walkthrough Studio</title>
+<meta name="description" content="An interactive first-person and drone walkthrough of Wat Arun, the Temple of Dawn on the Chao Phraya River in Bangkok. Bilingual English/Thai hotspots, three lighting presets, spatial Web Audio ambience and a savable tour journal.">
+<meta name="author" content="Somphol Boonjing">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wat Arun 3D — Virtual Riverside Sanctuary">
+<meta property="og:description" content="Walk the courtyard of the Temple of Dawn: the central Phra Prang, yaksha guardians, porcelain mosaics and the Chao Phraya riverfront.">
+<meta property="og:image" content="screenshot.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="stage" aria-hidden="true"></div>
+
+<!-- ============================= LOADER ============================= -->
+<div id="loader" class="loader">
+  <div class="loader-inner">
+    <div class="loader-prang" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <h1 class="loader-title">Wat Arun</h1>
+    <p class="loader-sub" data-i18n="loader.sub">Temple of Dawn · Bangkok</p>
+    <div class="loader-bar"><i id="loader-fill"></i></div>
+    <p class="loader-status" id="loader-status" data-i18n="loader.building">Building the riverside sanctuary…</p>
+  </div>
+</div>
+
+<!-- ============================= INTRO ============================= -->
+<div id="intro" class="intro" role="dialog" aria-modal="true" aria-labelledby="intro-title">
+  <div class="intro-card">
+    <div class="intro-kicker" data-i18n="intro.kicker">Virtual Riverside Sanctuary &amp; Walkthrough Studio</div>
+    <h1 id="intro-title" class="intro-title">Wat Arun<span>วัดอรุณราชวราราม</span></h1>
+    <p class="intro-lede" data-i18n="intro.lede">
+      Step onto the stone pier where the Chao Phraya meets the Temple of Dawn. Climb the terraces of the central Phra Prang, meet the yaksha guardians, and read the porcelain mosaics that shimmer in the river light.
+    </p>
+    <div class="intro-feats">
+      <div><b data-i18n="intro.f1t">Walk &amp; Fly</b><span data-i18n="intro.f1d">First-person courtyard walk or full drone orbit</span></div>
+      <div><b data-i18n="intro.f2t">Five Hotspots</b><span data-i18n="intro.f2d">Bilingual history, lore and narration</span></div>
+      <div><b data-i18n="intro.f3t">Three Skies</b><span data-i18n="intro.f3d">Golden dawn, sunset glow, night illumination</span></div>
+    </div>
+    <div class="intro-actions">
+      <button id="btn-begin" class="btn btn-gold btn-lg">
+        <span data-i18n="intro.begin">Enter the Sanctuary</span>
+        <small data-i18n="intro.beginSub">Click to walk · mouse look · WASD</small>
+      </button>
+      <button id="btn-begin-orbit" class="btn btn-ghost btn-lg" data-i18n="intro.beginOrbit">Drone flyover instead</button>
+    </div>
+    <p class="intro-note" data-i18n="intro.note">Headphones recommended · progress is saved on this device</p>
+  </div>
+  <div class="intro-credits">
+    <span data-i18n="intro.credit">Built with OpenCode &amp; DeepSeek V4.1 Flash · Three.js</span>
+  </div>
+</div>
+
+<!-- ============================= HUD ============================= -->
+<header id="hud-top" class="hud-top">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 32 32"><path d="M16 1.8 19 8h-6zM16 7.5 20 15h-8zM16 14.5 21.4 23h-10.8zM16 22.5 23 30.5H9z"/></svg>
+    </div>
+    <div class="brand-text">
+      <strong>Wat Arun <em>3D</em></strong>
+      <span data-i18n="brand.sub">Riverside Sanctuary</span>
+    </div>
+  </div>
+
+  <nav class="hud-actions" aria-label="Controls">
+    <div class="seg" id="lang-switch" role="group" aria-label="Language">
+      <button class="seg-btn is-active" data-lang="en" aria-pressed="true">EN</button>
+      <button class="seg-btn" data-lang="th" aria-pressed="false">ไทย</button>
+    </div>
+
+    <div class="seg seg-presets" id="preset-switch" role="group" aria-label="Time of day">
+      <button class="seg-btn is-active" data-preset="dawn" aria-pressed="true">
+        <i class="dot dot-dawn"></i><span data-i18n="preset.dawn">Golden Dawn</span>
+      </button>
+      <button class="seg-btn" data-preset="sunset" aria-pressed="false">
+        <i class="dot dot-sunset"></i><span data-i18n="preset.sunset">Sunset Glow</span>
+      </button>
+      <button class="seg-btn" data-preset="night" aria-pressed="false">
+        <i class="dot dot-night"></i><span data-i18n="preset.night">Night Illumination</span>
+      </button>
+    </div>
+
+    <div class="seg" id="mode-switch" role="group" aria-label="Navigation mode">
+      <button class="seg-btn is-active" data-mode="walk" aria-pressed="true">
+        <svg viewBox="0 0 24 24" class="ico"><circle cx="13" cy="4" r="2"/><path d="M11 8.5 8 13l3 1.5 1 6M13 8.5l3 3 3 .5M11 19l3-3"/></svg>
+        <span data-i18n="mode.walk">Walk</span>
+      </button>
+      <button class="seg-btn" data-mode="orbit" aria-pressed="false">
+        <svg viewBox="0 0 24 24" class="ico"><circle cx="12" cy="12" r="3"/><path d="M4.5 15.5C2 14 1 11.5 1 9.5c0-3 4.9-5.5 11-5.5s11 2.5 11 5.5c0 2-1 4.5-3.5 6M19.5 8.5C22 10 23 12.5 23 14.5c0 3-4.9 5.5-11 5.5s-11-2.5-11-5.5c0-2 1-4.5 3.5-6"/></svg>
+        <span data-i18n="mode.orbit">Drone</span>
+      </button>
+    </div>
+
+    <div class="hud-icons">
+      <button id="btn-audio" class="icon-btn" aria-pressed="true" title="Sound">
+        <svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+      </button>
+      <button id="btn-photo" class="icon-btn" title="Photo">
+        <svg viewBox="0 0 24 24"><path d="M3 7h4l2-2h6l2 2h4v13H3z"/><circle cx="12" cy="13" r="3.6"/></svg>
+      </button>
+      <button id="btn-save" class="icon-btn" title="Save journal">
+        <svg viewBox="0 0 24 24"><path d="M5 3h11l3 3v15H5z"/><path d="M8 3v6h8V3M8 21v-7h8v7"/></svg>
+      </button>
+      <button id="btn-load" class="icon-btn" title="Load journal">
+        <svg viewBox="0 0 24 24"><path d="M3 7h6l2 2h10v11H3z"/><path d="M12 12v6M9.5 15.5 12 18l2.5-2.5"/></svg>
+      </button>
+      <button id="btn-help" class="icon-btn" title="Help">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.9-2.5 2.1-2.5 3.9"/><circle cx="12" cy="17.6" r=".9" fill="currentColor" stroke="none"/></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ============================= LEFT PANEL ============================= -->
+<aside id="panel-left" class="panel panel-left">
+  <div class="panel-head">
+    <h2 data-i18n="panel.hotspots">Sanctuary Hotspots</h2>
+    <span class="badge" id="visited-count">0 / 5</span>
+  </div>
+  <ul id="hotspot-list" class="hotspot-list"></ul>
+  <div class="panel-foot">
+    <div class="stat"><span data-i18n="stat.preset">Sky</span><b id="stat-preset">Golden Dawn</b></div>
+    <div class="stat"><span data-i18n="stat.mode">Mode</span><b id="stat-mode">First-person</b></div>
+  </div>
+</aside>
+
+<!-- ============================= RIGHT PANEL ============================= -->
+<aside id="panel-right" class="panel panel-right">
+  <div class="minimap-wrap">
+    <canvas id="minimap" width="240" height="240" aria-label="Courtyard map"></canvas>
+    <div class="minimap-ring"></div>
+    <div class="compass"><span>N</span></div>
+  </div>
+  <div class="mini-legend">
+    <span><i class="lg lg-prang"></i><span data-i18n="map.prang">Prang</span></span>
+    <span><i class="lg lg-hall"></i><span data-i18n="map.hall">Ubosot</span></span>
+    <span><i class="lg lg-river"></i><span data-i18n="map.river">River</span></span>
+  </div>
+  <div class="coords" id="coords">X 46.0 · Z 0.0</div>
+</aside>
+
+<!-- ============================= BOTTOM BAR ============================= -->
+<div id="hud-bottom" class="hud-bottom">
+  <div class="zone-chip">
+    <span class="pulse"></span>
+    <div>
+      <b id="zone-name" data-i18n="zone.promenade">Chao Phraya Promenade</b>
+      <small id="zone-hint" data-i18n="zone.promenadeHint">Six granite salas face the river landing</small>
+    </div>
+  </div>
+  <div class="hint-bar" id="hint-bar">
+    <span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> <span data-i18n="hint.move">move</span></span>
+    <span><kbd>Shift</kbd> <span data-i18n="hint.sprint">sprint</span></span>
+    <span><kbd>Space</kbd> <span data-i18n="hint.jump">jump</span></span>
+    <span><kbd>E</kbd> <span data-i18n="hint.interact">inspect</span></span>
+    <span><kbd>M</kbd> <span data-i18n="hint.map">map</span></span>
+  </div>
+  <div class="touch-pad" id="touch-pad" aria-hidden="true">
+    <button data-move="fwd">▲</button>
+    <div>
+      <button data-move="left">◀</button>
+      <button data-move="back">▼</button>
+      <button data-move="right">▶</button>
+    </div>
+  </div>
+</div>
+
+<button id="btn-hotspots" class="hotspots-toggle" aria-expanded="false" aria-controls="panel-left">
+  <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
+  <span data-i18n="panel.hotspots">Sanctuary Hotspots</span>
+  <b id="mobile-visited">0 / 5</b>
+</button>
+
+<div id="crosshair" class="crosshair"><i></i><i></i><b></b></div>
+<div id="reticle-hint" class="reticle-hint"></div>
+<div id="nearby" class="nearby-prompt" hidden>
+  <kbd>E</kbd><span id="nearby-label" data-i18n="hint.inspectNearby">Inspect hotspot</span>
+</div>
+
+<!-- ============================= HOTSPOT MODAL ============================= -->
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+  <div class="modal-card">
+    <button id="modal-close" class="modal-close" aria-label="Close">×</button>
+    <div class="modal-visual" id="modal-visual">
+      <div class="modal-icon" id="modal-icon">✦</div>
+      <div class="modal-visual-meta">
+        <span id="modal-index">Hotspot 01</span>
+        <span id="modal-visited-tag" class="visited-tag" data-i18n="modal.visited">Visited</span>
+      </div>
+    </div>
+    <div class="modal-content">
+      <p class="modal-eyebrow" id="modal-eyebrow">Temple of Dawn</p>
+      <h2 id="modal-title">Central Prang &amp; Mount Meru Cosmology</h2>
+      <p class="modal-thai" id="modal-thai-title" lang="th">พระปรางค์ประธานกับจักรวาลวิทยาเขาพระสุเมรุ</p>
+      <div class="modal-body" id="modal-body"></div>
+      <div class="modal-quote" id="modal-quote"></div>
+      <div class="modal-actions">
+        <button id="btn-narrate" class="btn btn-gold">
+          <svg viewBox="0 0 24 24" class="ico"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/></svg>
+          <span data-i18n="modal.narrate">Play narration</span>
+        </button>
+        <button id="btn-narrate-stop" class="btn btn-ghost" data-i18n="modal.stop">Stop</button>
+        <button id="btn-bookmark" class="btn btn-ghost">
+          <span data-i18n="modal.bookmark">Bookmark a photo</span>
+        </button>
+        <button id="btn-next-hotspot" class="btn btn-ghost" data-i18n="modal.next">Next hotspot →</button>
+      </div>
+      <p class="modal-status" id="modal-status"></p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================= HELP ============================= -->
+<div id="help" class="modal help" role="dialog" aria-modal="true" aria-labelledby="help-title" hidden>
+  <div class="modal-card help-card">
+    <button id="help-close" class="modal-close" aria-label="Close">×</button>
+    <div class="modal-content">
+      <p class="modal-eyebrow" data-i18n="help.eyebrow">Field guide</p>
+      <h2 id="help-title" data-i18n="help.title">Walking the sanctuary</h2>
+      <div class="help-grid">
+        <div>
+          <h3 data-i18n="help.walkTitle">First-person walk</h3>
+          <ul>
+            <li><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> <span data-i18n="help.walk1">Walk; hold Shift to sprint</span></li>
+            <li><kbd>Space</kbd> <span data-i18n="help.walk2">Jump; steps and ramps are walkable</span></li>
+            <li><kbd>Mouse</kbd> <span data-i18n="help.walk3">Look around while pointer is locked</span></li>
+            <li><kbd>E</kbd> <span data-i18n="help.walk4">Read the nearest hotspot</span></li>
+            <li><kbd>Esc</kbd> <span data-i18n="help.walk5">Release the pointer</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-i18n="help.orbitTitle">Drone flyover</h3>
+          <ul>
+            <li><kbd data-i18n="help.drag">Drag</kbd> <span data-i18n="help.orbit1">Orbit the whole complex</span></li>
+            <li><kbd data-i18n="help.wheel">Wheel</kbd> <span data-i18n="help.orbit2">Zoom from river level to the finial</span></li>
+            <li><kbd data-i18n="help.rightDrag">Right-drag</kbd> <span data-i18n="help.orbit3">Pan the target</span></li>
+            <li><kbd>1</kbd> <span data-i18n="help.orbit4">Drone view preset over the river</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-i18n="help.audioTitle">Sound &amp; language</h3>
+          <ul>
+            <li><span data-i18n="help.audio1">River, chimes and footsteps are synthesised live with Web Audio</span></li>
+            <li><span data-i18n="help.audio2">Narration uses your device's English or Thai voice</span></li>
+            <li><span data-i18n="help.audio3">EN / ไทย switches every label and description</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-i18n="help.journalTitle">Tour journal</h3>
+          <ul>
+            <li><span data-i18n="help.journal1">Visits and photo bookmarks autosave to this browser</span></li>
+            <li><span data-i18n="help.journal2">Save exports watarun_3d_journal.json</span></li>
+            <li><span data-i18n="help.journal3">Load restores a journal on any device</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="help-actions">
+        <button id="help-gallery" class="btn btn-gold" data-i18n="gallery.title">Bookmarked views</button>
+        <button id="help-save" class="btn btn-ghost" data-i18n="journal.save">Save tour journal</button>
+        <button id="help-load" class="btn btn-ghost" data-i18n="journal.load">Load journal</button>
+      </div>
+      <p class="help-credit" data-i18n="help.credit">Wat Arun 3D · an educational homage built with OpenCode and DeepSeek V4.1 Flash. Not affiliated with Wat Arun Ratchawararam.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================= PHOTO GALLERY ============================= -->
+<div id="gallery" class="modal" role="dialog" aria-modal="true" aria-labelledby="gallery-title" hidden>
+  <div class="modal-card gallery-card">
+    <button id="gallery-close" class="modal-close" aria-label="Close">×</button>
+    <div class="modal-content">
+      <p class="modal-eyebrow" data-i18n="gallery.eyebrow">Photo journal</p>
+      <h2 id="gallery-title" data-i18n="gallery.title">Bookmarked views</h2>
+      <div id="gallery-grid" class="gallery-grid"></div>
+      <p id="gallery-empty" class="gallery-empty" data-i18n="gallery.empty">No photos yet. Press the camera button or use “Bookmark a photo” inside a hotspot.</p>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<div id="selftest" class="selftest" hidden>
+  <h2>Wat Arun 3D — Self Test</h2>
+  <div id="selftest-list"></div>
+  <p id="selftest-summary"></p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://unpkg.com/three@0.128.0/examples/js/controls/PointerLockControls.js"></script>
+<script src="https://unpkg.com/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
