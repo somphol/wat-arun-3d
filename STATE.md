@@ -45,8 +45,8 @@ A complete, self-contained 3D walkthrough of Wat Arun in Bangkok in three modula
 
 ### 2. Dual-mode navigation
 
-- **First-person walk** — WASD/arrow movement, pointer-lock mouse look, drag-look fallback, sprint, jump, head bob, distance-synced footsteps, collision against walls, towers, halls, salas, trees and the river boundary, and step-up handling for the ramp and gate.
-- **Drone flyover** — OrbitControls with 360° rotation, pitch to the horizon, 16–270 m zoom and target panning, plus a one-key return to the river view.
+- **First-person walk** — WASD/arrow movement, hold-and-drag look, wheel zoom, sprint, jump, head bob, distance-synced footsteps, collision against walls, towers, halls, salas, trees and the river boundary, and step-up handling for the ramp and gate. Pointer lock is opt-in only.
+- **Explore / drone (default entry)** — OrbitControls with hold-and-drag rotation, wheel zoom, 16–270 m distance and right-drag panning, plus a one-key return to the river view.
 - Mode buttons in the HUD, with the walk position preserved when returning from the drone.
 
 ### 3. Bilingual hotspots and lighting

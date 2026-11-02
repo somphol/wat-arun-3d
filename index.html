@@ -43,18 +43,18 @@
       Step onto the stone pier where the Chao Phraya meets the Temple of Dawn. Climb the terraces of the central Phra Prang, meet the yaksha guardians, and read the porcelain mosaics that shimmer in the river light.
     </p>
     <div class="intro-feats">
-      <div><b data-i18n="intro.f1t">Walk &amp; Fly</b><span data-i18n="intro.f1d">First-person courtyard walk or full drone orbit</span></div>
+      <div><b data-i18n="intro.f1t">Hold, Drag &amp; Explore</b><span data-i18n="intro.f1d">Orbit the whole sanctuary with the mouse, or walk the courtyard on foot</span></div>
       <div><b data-i18n="intro.f2t">Five Hotspots</b><span data-i18n="intro.f2d">Bilingual history, lore and narration</span></div>
       <div><b data-i18n="intro.f3t">Three Skies</b><span data-i18n="intro.f3d">Golden dawn, sunset glow, night illumination</span></div>
     </div>
     <div class="intro-actions">
       <button id="btn-begin" class="btn btn-gold btn-lg">
-        <span data-i18n="intro.begin">Enter the Sanctuary</span>
-        <small data-i18n="intro.beginSub">Click to walk · mouse look · WASD</small>
+        <span data-i18n="intro.begin">Explore in 3D</span>
+        <small data-i18n="intro.beginSub">Hold and drag to orbit · scroll to zoom · right-drag to pan</small>
       </button>
-      <button id="btn-begin-orbit" class="btn btn-ghost btn-lg" data-i18n="intro.beginOrbit">Drone flyover instead</button>
+      <button id="btn-begin-walk" class="btn btn-ghost btn-lg" data-i18n="intro.beginWalk">Walk the courtyard</button>
     </div>
-    <p class="intro-note" data-i18n="intro.note">Headphones recommended · progress is saved on this device</p>
+    <p class="intro-note" data-i18n="intro.note">Hold and drag to look around · scroll to zoom · progress is saved on this device</p>
   </div>
   <div class="intro-credits">
     <span data-i18n="intro.credit">Built with OpenCode &amp; DeepSeek V4.1 Flash · Three.js</span>
@@ -92,11 +92,11 @@
     </div>
 
     <div class="seg" id="mode-switch" role="group" aria-label="Navigation mode">
-      <button class="seg-btn is-active" data-mode="walk" aria-pressed="true">
+      <button class="seg-btn" data-mode="walk" aria-pressed="false">
         <svg viewBox="0 0 24 24" class="ico"><circle cx="13" cy="4" r="2"/><path d="M11 8.5 8 13l3 1.5 1 6M13 8.5l3 3 3 .5M11 19l3-3"/></svg>
         <span data-i18n="mode.walk">Walk</span>
       </button>
-      <button class="seg-btn" data-mode="orbit" aria-pressed="false">
+      <button class="seg-btn is-active" data-mode="orbit" aria-pressed="true">
         <svg viewBox="0 0 24 24" class="ico"><circle cx="12" cy="12" r="3"/><path d="M4.5 15.5C2 14 1 11.5 1 9.5c0-3 4.9-5.5 11-5.5s11 2.5 11 5.5c0 2-1 4.5-3.5 6M19.5 8.5C22 10 23 12.5 23 14.5c0 3-4.9 5.5-11 5.5s-11-2.5-11-5.5c0-2 1-4.5 3.5-6"/></svg>
         <span data-i18n="mode.orbit">Drone</span>
       </button>
@@ -131,7 +131,7 @@
   <ul id="hotspot-list" class="hotspot-list"></ul>
   <div class="panel-foot">
     <div class="stat"><span data-i18n="stat.preset">Sky</span><b id="stat-preset">Golden Dawn</b></div>
-    <div class="stat"><span data-i18n="stat.mode">Mode</span><b id="stat-mode">First-person</b></div>
+    <div class="stat"><span data-i18n="stat.mode">Mode</span><b id="stat-mode">Drone orbit</b></div>
   </div>
 </aside>
 
@@ -160,9 +160,14 @@
     </div>
   </div>
   <div class="hint-bar" id="hint-bar">
-    <span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> <span data-i18n="hint.move">move</span></span>
-    <span><kbd>Shift</kbd> <span data-i18n="hint.sprint">sprint</span></span>
-    <span><kbd>Space</kbd> <span data-i18n="hint.jump">jump</span></span>
+    <span class="only-walk"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> <span data-i18n="hint.move">move</span></span>
+    <span class="only-walk"><kbd>Shift</kbd> <span data-i18n="hint.sprint">sprint</span></span>
+    <span class="only-walk"><kbd>Space</kbd> <span data-i18n="hint.jump">jump</span></span>
+    <span class="only-walk"><kbd>Drag</kbd> <span data-i18n="hint.look">look</span></span>
+    <span class="only-walk"><kbd>Wheel</kbd> <span data-i18n="hint.zoom">zoom</span></span>
+    <span class="only-orbit"><kbd>Drag</kbd> <span data-i18n="hint.orbit">orbit</span></span>
+    <span class="only-orbit"><kbd>Wheel</kbd> <span data-i18n="hint.zoom">zoom</span></span>
+    <span class="only-orbit"><kbd>R-drag</kbd> <span data-i18n="hint.pan">pan</span></span>
     <span><kbd>E</kbd> <span data-i18n="hint.interact">inspect</span></span>
     <span><kbd>M</kbd> <span data-i18n="hint.map">map</span></span>
   </div>
@@ -227,16 +232,17 @@
     <button id="help-close" class="modal-close" aria-label="Close">×</button>
     <div class="modal-content">
       <p class="modal-eyebrow" data-i18n="help.eyebrow">Field guide</p>
-      <h2 id="help-title" data-i18n="help.title">Walking the sanctuary</h2>
+      <h2 id="help-title" data-i18n="help.title">Exploring the sanctuary</h2>
       <div class="help-grid">
         <div>
           <h3 data-i18n="help.walkTitle">First-person walk</h3>
           <ul>
-            <li><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> <span data-i18n="help.walk1">Walk; hold Shift to sprint</span></li>
-            <li><kbd>Space</kbd> <span data-i18n="help.walk2">Jump; steps and ramps are walkable</span></li>
-            <li><kbd>Mouse</kbd> <span data-i18n="help.walk3">Look around while pointer is locked</span></li>
-            <li><kbd>E</kbd> <span data-i18n="help.walk4">Read the nearest hotspot</span></li>
-            <li><kbd>Esc</kbd> <span data-i18n="help.walk5">Release the pointer</span></li>
+            <li><kbd data-i18n="help.drag">Drag</kbd> <span data-i18n="help.walk1">Hold and drag anywhere to look around</span></li>
+            <li><kbd data-i18n="help.wheel">Wheel</kbd> <span data-i18n="help.walk2">Scroll to zoom the view in and out</span></li>
+            <li><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> <span data-i18n="help.walk3">Walk; hold Shift to sprint</span></li>
+            <li><kbd>Space</kbd> <span data-i18n="help.walk4">Jump; steps and ramps are walkable</span></li>
+            <li><kbd>E</kbd> <span data-i18n="help.walk5">Read the nearest hotspot</span></li>
+            <li><kbd>Esc</kbd> <span data-i18n="help.walk6">Release the pointer if immersive mouse look is on</span></li>
           </ul>
         </div>
         <div>
@@ -269,6 +275,7 @@
         <button id="help-gallery" class="btn btn-gold" data-i18n="gallery.title">Bookmarked views</button>
         <button id="help-save" class="btn btn-ghost" data-i18n="journal.save">Save tour journal</button>
         <button id="help-load" class="btn btn-ghost" data-i18n="journal.load">Load journal</button>
+        <button id="help-mouselook" class="btn btn-ghost" data-i18n="help.mouselook">Immersive mouse look (optional)</button>
       </div>
       <p class="help-credit" data-i18n="help.credit">Wat Arun 3D · an educational homage built with OpenCode and DeepSeek V4.1 Flash. Not affiliated with Wat Arun Ratchawararam.</p>
     </div>

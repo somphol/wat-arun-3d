@@ -34,16 +34,16 @@
       'loader.ready': 'Sanctuary ready',
       'intro.kicker': 'Virtual Riverside Sanctuary & Walkthrough Studio',
       'intro.lede': 'Step onto the stone pier where the Chao Phraya meets the Temple of Dawn. Climb the terraces of the central Phra Prang, meet the yaksha guardians, and read the porcelain mosaics that shimmer in the river light.',
-      'intro.f1t': 'Walk & Fly',
-      'intro.f1d': 'First-person courtyard walk or full drone orbit',
+      'intro.f1t': 'Hold, Drag & Explore',
+      'intro.f1d': 'Orbit with the mouse, or walk the courtyard on foot',
       'intro.f2t': 'Five Hotspots',
       'intro.f2d': 'Bilingual history, lore and narration',
       'intro.f3t': 'Three Skies',
       'intro.f3d': 'Golden dawn, sunset glow, night illumination',
-      'intro.begin': 'Enter the Sanctuary',
-      'intro.beginSub': 'Click to walk · mouse look · WASD',
-      'intro.beginOrbit': 'Drone flyover instead',
-      'intro.note': 'Headphones recommended · progress is saved on this device',
+      'intro.begin': 'Explore in 3D',
+      'intro.beginSub': 'Hold and drag to orbit · scroll to zoom · right-drag to pan',
+      'intro.beginWalk': 'Walk the courtyard',
+      'intro.note': 'Hold and drag to look around · scroll to zoom · progress is saved on this device',
       'intro.credit': 'Built with OpenCode & DeepSeek V4.1 Flash · Three.js',
       'brand.sub': 'Riverside Sanctuary',
       'preset.dawn': 'Golden Dawn',
@@ -74,6 +74,10 @@
       'hint.jump': 'jump',
       'hint.interact': 'inspect',
       'hint.map': 'map',
+      'hint.look': 'look',
+      'hint.zoom': 'zoom',
+      'hint.orbit': 'orbit',
+      'hint.pan': 'pan',
       'hint.inspectNearby': 'Inspect hotspot',
       'hint.pressToRead': 'Press E to read',
       'modal.visited': 'Visited',
@@ -85,13 +89,14 @@
       'modal.statusNarrating': 'Narrating in English…',
       'modal.statusNoVoice': 'No English voice found — showing the text instead.',
       'help.eyebrow': 'Field guide',
-      'help.title': 'Walking the sanctuary',
+      'help.title': 'Exploring the sanctuary',
       'help.walkTitle': 'First-person walk',
-      'help.walk1': 'Walk; hold Shift to sprint',
-      'help.walk2': 'Jump; steps and ramps are walkable',
-      'help.walk3': 'Look around while pointer is locked',
-      'help.walk4': 'Read the nearest hotspot',
-      'help.walk5': 'Release the pointer',
+      'help.walk1': 'Hold and drag anywhere to look around',
+      'help.walk2': 'Scroll to zoom the view in and out',
+      'help.walk3': 'Walk; hold Shift to sprint',
+      'help.walk4': 'Jump; steps and ramps are walkable',
+      'help.walk5': 'Read the nearest hotspot',
+      'help.walk6': 'Release the pointer if immersive mouse look is on',
       'help.orbitTitle': 'Drone flyover',
       'help.orbit1': 'Orbit the whole complex',
       'help.orbit2': 'Zoom from river level to the finial',
@@ -108,6 +113,7 @@
       'help.journal1': 'Visits and photo bookmarks autosave to this browser',
       'help.journal2': 'Save exports watarun_3d_journal.json',
       'help.journal3': 'Load restores a journal on any device',
+      'help.mouselook': 'Immersive mouse look (optional)',
       'help.credit': 'Wat Arun 3D · an educational homage built with OpenCode and DeepSeek V4.1 Flash. Not affiliated with Wat Arun Ratchawararam.',
       'gallery.eyebrow': 'Photo journal',
       'gallery.title': 'Bookmarked views',
@@ -129,11 +135,12 @@
       'toast.presetDawn': 'Golden dawn over the Chao Phraya',
       'toast.presetSunset': 'Sunset glow — long shadows on the terrace',
       'toast.presetNight': 'Night illumination — the prang lit in gold',
-      'toast.modeWalk': 'First-person walk — mouse look, WASD to move',
-      'toast.modeOrbit': 'Drone orbit — drag to circle, wheel to zoom',
-      'toast.needLock': 'Click the scene to capture the mouse',
+      'toast.modeWalk': 'Walk — hold and drag to look, scroll to zoom, WASD to move',
+      'toast.modeOrbit': 'Explore — hold and drag to orbit, scroll to zoom, right-drag to pan',
+      'toast.needLock': 'Mouse look is not available in this browser',
       'toast.outOfBounds': 'The river edge is closed beyond the landing',
       'toast.narrationUnsupported': 'Narration is not available in this browser',
+      'toast.mouseLookOn': 'Immersive mouse look on — press Esc to release the pointer',
       'toast.noPhotos': 'No bookmarked photos yet',
       'toast.photoDeleted': 'Photo removed',
       'toast.reset': 'View reset',
@@ -149,16 +156,16 @@
       'loader.ready': 'ศาสนสถานพร้อมแล้ว',
       'intro.kicker': 'พิพิธภัณฑ์เสมือนจริงริมแม่น้ำและสตูดิโอเดินชม',
       'intro.lede': 'ก้าวขึ้นท่าหินที่แม่น้ำเจ้าพระยาบรรจบกับวัดอรุณ ไต่ระเบียงของพระปรางค์ประธาน พบทวารบาลยักษ์ และอ่านลวดลายกระเบื้องเคลือบที่เปล่งประกายในแสงน้ำ',
-      'intro.f1t': 'เดินและบิน',
-      'intro.f1d': 'เดินชมแบบบุคคลที่หนึ่ง หรือบังคับโดรนรอบองค์พระปรางค์',
+      'intro.f1t': 'กด ลาก และสำรวจ',
+      'intro.f1d': 'หมุนชมด้วยเมาส์ หรือเดินชมลานวัดด้วยเท้า',
       'intro.f2t': 'ห้าจุดเรียนรู้',
       'intro.f2d': 'ประวัติศาสตร์ ตำนาน และเสียงบรรยายสองภาษา',
       'intro.f3t': 'สามท้องฟ้า',
       'intro.f3d': 'อรุโณทัย ยามอัสดง และไฟประดับยามค่ำ',
-      'intro.begin': 'เข้าสู่ศาสนสถาน',
-      'intro.beginSub': 'คลิกเพื่อเดิน · มองด้วยเมาส์ · WASD',
-      'intro.beginOrbit': 'ชมด้วยโดรนแทน',
-      'intro.note': 'แนะนำให้ใส่หูฟัง · ความคืบหน้าบันทึกในอุปกรณ์นี้',
+      'intro.begin': 'สำรวจในแบบ 3 มิติ',
+      'intro.beginSub': 'กดค้างแล้วลากเพื่อหมุน · เลื่อนล้อเพื่อซูม · ลากขวาเพื่อเลื่อนภาพ',
+      'intro.beginWalk': 'เดินชมลานวัด',
+      'intro.note': 'กดค้างแล้วลากเพื่อมองรอบตัว · เลื่อนล้อเพื่อซูม · ความคืบหน้าบันทึกในอุปกรณ์นี้',
       'intro.credit': 'สร้างด้วย OpenCode และ DeepSeek V4.1 Flash · Three.js',
       'brand.sub': 'ศาสนสถานริมน้ำ',
       'preset.dawn': 'อรุโณทัย',
@@ -189,6 +196,10 @@
       'hint.jump': 'กระโดด',
       'hint.interact': 'ตรวจดู',
       'hint.map': 'แผนที่',
+      'hint.look': 'มอง',
+      'hint.zoom': 'ซูม',
+      'hint.orbit': 'หมุน',
+      'hint.pan': 'เลื่อนภาพ',
       'hint.inspectNearby': 'ตรวจดูจุดเรียนรู้',
       'hint.pressToRead': 'กด E เพื่ออ่าน',
       'modal.visited': 'เยี่ยมชมแล้ว',
@@ -200,13 +211,14 @@
       'modal.statusNarrating': 'กำลังบรรยายเป็นภาษาไทย…',
       'modal.statusNoVoice': 'ไม่พบเสียงภาษาไทย — แสดงข้อความแทน',
       'help.eyebrow': 'คู่มือภาคสนาม',
-      'help.title': 'การเดินชมศาสนสถาน',
+      'help.title': 'การสำรวจศาสนสถาน',
       'help.walkTitle': 'เดินชมบุคคลที่หนึ่ง',
-      'help.walk1': 'เดิน กด Shift ค้างเพื่อวิ่ง',
-      'help.walk2': 'กระโดด บันไดและทางลาดเดินได้',
-      'help.walk3': 'มองรอบตัวเมื่อเมาส์ถูกล็อก',
-      'help.walk4': 'อ่านจุดเรียนรู้ที่ใกล้ที่สุด',
-      'help.walk5': 'ปลดล็อกเมาส์',
+      'help.walk1': 'กดค้างแล้วลากที่ใดก็ได้เพื่อมองรอบตัว',
+      'help.walk2': 'เลื่อนล้อเพื่อซูมเข้าและออก',
+      'help.walk3': 'เดิน กด Shift ค้างเพื่อวิ่ง',
+      'help.walk4': 'กระโดด บันไดและทางลาดเดินได้',
+      'help.walk5': 'อ่านจุดเรียนรู้ที่ใกล้ที่สุด',
+      'help.walk6': 'ปลดล็อกเมาส์เมื่อเปิดโหมดมองด้วยเมาส์แบบเต็ม',
       'help.orbitTitle': 'บินชมด้วยโดรน',
       'help.orbit1': 'หมุนรอบศาสนสถานทั้งหลัง',
       'help.orbit2': 'ซูมจากระดับแม่น้ำถึงยอดพระปรางค์',
@@ -223,6 +235,7 @@
       'help.journal1': 'การเยี่ยมชมและภาพที่บันทึกจะถูกเก็บในเบราว์เซอร์นี้',
       'help.journal2': 'บันทึกเป็นไฟล์ watarun_3d_journal.json',
       'help.journal3': 'โหลดเพื่อกู้คืนสมุดบันทึกบนอุปกรณ์อื่น',
+      'help.mouselook': 'มองด้วยเมาส์แบบเต็ม (ไม่บังคับ)',
       'help.credit': 'วัดอรุณ 3D · งานศึกษาเพื่อการเรียนรู้ สร้างด้วย OpenCode และ DeepSeek V4.1 Flash ไม่ได้สังกัดวัดอรุณราชวราราม',
       'gallery.eyebrow': 'สมุดภาพ',
       'gallery.title': 'ภาพที่บันทึกไว้',
@@ -244,11 +257,12 @@
       'toast.presetDawn': 'อรุโณทัยเหนือแม่น้ำเจ้าพระยา',
       'toast.presetSunset': 'ยามอัสดง — เงายาวบนลาน',
       'toast.presetNight': 'ไฟประดับยามค่ำ — พระปรางค์ส่องทอง',
-      'toast.modeWalk': 'เดินบุคคลที่หนึ่ง — มองด้วยเมาส์ WASD เพื่อเดิน',
-      'toast.modeOrbit': 'โดรนโคจร — ลากเพื่อหมุน ล้อเพื่อซูม',
-      'toast.needLock': 'คลิกฉากเพื่อจับเมาส์',
+      'toast.modeWalk': 'เดิน — กดค้างแล้วลากเพื่อมอง เลื่อนล้อเพื่อซูม WASD เพื่อเดิน',
+      'toast.modeOrbit': 'สำรวจ — กดค้างแล้วลากเพื่อหมุน เลื่อนล้อเพื่อซูม ลากขวาเพื่อเลื่อนภาพ',
+      'toast.needLock': 'เบราว์เซอร์นี้ไม่รองรับโหมดมองด้วยเมาส์',
       'toast.outOfBounds': 'ขอบแม่น้ำปิดเกินท่าเรือ',
       'toast.narrationUnsupported': 'เบราว์เซอร์นี้ไม่รองรับเสียงบรรยาย',
+      'toast.mouseLookOn': 'เปิดโหมดมองด้วยเมาส์ — กด Esc เพื่อปลดล็อก',
       'toast.noPhotos': 'ยังไม่มีภาพที่บันทึก',
       'toast.photoDeleted': 'ลบภาพแล้ว',
       'toast.reset': 'คืนมุมมองแล้ว',
@@ -420,7 +434,7 @@
   const State = {
     lang: 'en',
     preset: 'dawn',
-    mode: 'walk',
+    mode: 'orbit',
     audio: true,
     visited: [],
     photos: [],
@@ -445,6 +459,7 @@
   const touchMove = { fwd: 0, back: 0, left: 0, right: 0 };
   const clock = { last: nowMs(), elapsed: 0 };
   const stepState = { dist: 0, phase: 0 };
+  let camFovTarget = 52;
 
   const ZONES = [
     { id: 'prang', test: (x, z) => x * x + z * z < 26 * 26 },
@@ -3344,6 +3359,8 @@
   const raycaster = new THREE.Raycaster();
   raycaster.params.Sprite = { threshold: 2 };
   const screenCenter = new THREE.Vector2(0, 0);
+  const aimNDC = new THREE.Vector2(0, 0);
+  const canvasTap = { active: false, id: -1, x: 0, y: 0, sx: 0, sy: 0, moved: 0 };
   let markerSprites = [];
 
   const drag = { on: false, x: 0, y: 0, moved: 0 };
@@ -3375,7 +3392,8 @@
       orbit.enabled = true;
       orbit.update();
     }
-    camera.fov = mode === 'walk' ? 60 : 52;
+    camFovTarget = mode === 'walk' ? 60 : 52;
+    camera.fov = camFovTarget;
     camera.updateProjectionMatrix();
     $$('#mode-switch .seg-btn').forEach((b) => {
       const on = b.dataset.mode === mode;
@@ -3419,9 +3437,22 @@
     toast(t('toast.reset'), 1500);
   }
 
+  function hotspotAtScreen(clientX, clientY) {
+    if (!markerSprites.length) return null;
+    const rect = renderer.domElement.getBoundingClientRect();
+    const ndc = new THREE.Vector2(
+      ((clientX - rect.left) / rect.width) * 2 - 1,
+      -((clientY - rect.top) / rect.height) * 2 + 1
+    );
+    raycaster.setFromCamera(ndc, camera);
+    const hits = raycaster.intersectObjects(markerSprites, false);
+    const hit = hits.find((h) => h.distance < 160);
+    return hit ? HOTSPOT_BY_ID[hit.object.userData.hotspot] : null;
+  }
+
   function updateHoverTarget() {
     if (State.mode === 'walk' && !introVisible && !inModal.open && markerSprites.length) {
-      raycaster.setFromCamera(screenCenter, camera);
+      raycaster.setFromCamera(pointer.isLocked ? screenCenter : aimNDC, camera);
       const hits = raycaster.intersectObjects(markerSprites, false);
       const hit = hits.find((h) => h.distance < 120);
       const id = hit ? hit.object.userData.hotspot : null;
@@ -3430,9 +3461,11 @@
         ui.reticleHint.textContent = (LANG === 'th' ? 'อ่าน: ' : 'Read: ') + hoverHotspot[LANG].title;
         ui.reticleHint.classList.add('is-on');
         ui.crosshair.classList.add('is-hot');
+        if (!pointer.isLocked) renderer.domElement.style.cursor = 'pointer';
       } else {
         ui.reticleHint.classList.remove('is-on');
         ui.crosshair.classList.remove('is-hot');
+        if (!pointer.isLocked) renderer.domElement.style.cursor = '';
       }
     } else {
       hoverHotspot = null;
@@ -3442,7 +3475,7 @@
   }
 
   function interact() {
-    if (inModal.open || introVisible) return;
+    if (inModal.open || introVisible || State.mode !== 'walk') return;
     if (hoverHotspot) { openHotspot(hoverHotspot.id); return; }
     const near = nearbyTarget();
     if (near.hs && near.dist < 14) openHotspot(near.hs.id);
@@ -3880,7 +3913,6 @@
     $$('#mode-switch .seg-btn').forEach((b) => {
       b.addEventListener('click', () => {
         setMode(b.dataset.mode);
-        if (b.dataset.mode === 'walk' && !SHOT) requestLock();
       });
     });
 
@@ -3939,6 +3971,14 @@
     if (helpSave) helpSave.addEventListener('click', exportJournal);
     const helpLoad = $('#help-load');
     if (helpLoad) helpLoad.addEventListener('click', loadJournal);
+    const helpMouse = $('#help-mouselook');
+    if (helpMouse) helpMouse.addEventListener('click', () => {
+      ui.help.hidden = true;
+      if (pointer.isLocked) { try { pointer.unlock(); } catch (e) {} return; }
+      if (State.mode !== 'walk') setMode('walk', true);
+      requestLock();
+      toast(t('toast.mouseLookOn'), 3600);
+    });
 
     const galleryBtn = $('#btn-photo');
     const gallery = $('#gallery');
@@ -3956,9 +3996,9 @@
     }
 
     const begin = $('#btn-begin');
-    if (begin) begin.addEventListener('click', () => startExperience('walk'));
-    const beginOrbit = $('#btn-begin-orbit');
-    if (beginOrbit) beginOrbit.addEventListener('click', () => startExperience('orbit'));
+    if (begin) begin.addEventListener('click', () => startExperience('orbit'));
+    const beginWalk = $('#btn-begin-walk');
+    if (beginWalk) beginWalk.addEventListener('click', () => startExperience('walk'));
 
     // touch controls
     $$('#touch-pad button').forEach((b) => {
@@ -3971,21 +4011,58 @@
       b.addEventListener('pointercancel', off);
     });
 
-    // canvas pointer lock, mouse-look fallback, hotspot clicks
+    // hold-and-drag look, hotspot clicks, wheel zoom
     const canvas = renderer.domElement;
+    canvas.addEventListener('contextmenu', (e) => e.preventDefault());
     canvas.addEventListener('mousedown', (e) => {
       if (State.mode !== 'walk' || introVisible) return;
       if (e.button !== 0) return;
-      if (!pointer.isLocked) {
-        drag.on = true;
-        drag.x = e.clientX;
-        drag.y = e.clientY;
-        drag.moved = 0;
-        requestLock();
-      } else if (hoverHotspot) {
-        openHotspot(hoverHotspot.id);
+      if (pointer.isLocked) {
+        if (hoverHotspot) openHotspot(hoverHotspot.id);
+        return;
+      }
+      drag.on = true;
+      drag.x = e.clientX;
+      drag.y = e.clientY;
+      drag.moved = 0;
+    });
+    canvas.addEventListener('wheel', (e) => {
+      if (State.mode !== 'walk' || introVisible || inModal.open) return;
+      e.preventDefault();
+      camFovTarget = clamp(camFovTarget + e.deltaY * 0.035, 34, 78);
+    }, { passive: false });
+
+    canvas.addEventListener('pointermove', (e) => {
+      if (introVisible || pointer.isLocked) return;
+      const rect = canvas.getBoundingClientRect();
+      aimNDC.set(
+        ((e.clientX - rect.left) / rect.width) * 2 - 1,
+        -((e.clientY - rect.top) / rect.height) * 2 + 1
+      );
+      if (canvasTap.active) {
+        canvasTap.moved += Math.abs(e.clientX - canvasTap.x) + Math.abs(e.clientY - canvasTap.y);
+        canvasTap.x = e.clientX;
+        canvasTap.y = e.clientY;
       }
     });
+    canvas.addEventListener('pointerdown', (e) => {
+      if (e.button !== 0 || introVisible) return;
+      canvasTap.active = true;
+      canvasTap.id = e.pointerId;
+      canvasTap.x = canvasTap.sx = e.clientX;
+      canvasTap.y = canvasTap.sy = e.clientY;
+      canvasTap.moved = 0;
+    });
+    canvas.addEventListener('pointerup', (e) => {
+      if (!canvasTap.active || e.pointerId !== canvasTap.id) return;
+      canvasTap.active = false;
+      if (pointer.isLocked) return;
+      const moved = canvasTap.moved + Math.abs(e.clientX - canvasTap.sx) + Math.abs(e.clientY - canvasTap.sy);
+      if (moved > 7) return;
+      const hs = hotspotAtScreen(e.clientX, e.clientY);
+      if (hs) openHotspot(hs.id);
+    });
+    canvas.addEventListener('pointercancel', () => { canvasTap.active = false; });
     window.addEventListener('mousemove', (e) => {
       if (!drag.on) return;
       const dx = e.clientX - drag.x;
@@ -4079,8 +4156,7 @@
     const h = innerHeight;
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
-    const DPR_CAP = IS_TOUCH ? 1.35 : 1.75;
-  renderer.setPixelRatio(Math.min(devicePixelRatio || 1, DPR_CAP));
+    renderer.setPixelRatio(Math.min(devicePixelRatio || 1, DPR_CAP));
     renderer.setSize(w, h);
   }
 
@@ -4094,20 +4170,17 @@
     setTimeout(() => { if (ui.intro) ui.intro.style.display = 'none'; }, 700);
     AudioEngine.init();
     AudioEngine.resume();
-    const initial = mode || 'walk';
+    const initial = mode || 'orbit';
     player.y = groundHeight(player.x, player.z);
     setMode(initial, true);
-    camera.fov = initial === 'walk' ? 60 : 52;
-    camera.updateProjectionMatrix();
     if (initial === 'walk') {
       placeCameraOnPlayer();
-      if (!SHOT) requestLock();
     } else {
       camera.position.set(132, 58, 56);
       orbit.target.set(0, 27, 0);
       orbit.update();
     }
-    toast(t(initial === 'walk' ? 'toast.modeWalk' : 'toast.modeOrbit'), 3200);
+    toast(t(initial === 'walk' ? 'toast.modeWalk' : 'toast.modeOrbit'), 3600);
     saveLocalSoon();
   }
 
@@ -4191,6 +4264,10 @@
       updateIntroCamera(clock.elapsed);
     } else {
       updatePlayer(dt);
+      if (State.mode === 'walk' && Math.abs(camera.fov - camFovTarget) > 0.01) {
+        camera.fov = damp(camera.fov, camFovTarget, 14, dt);
+        camera.updateProjectionMatrix();
+      }
       if (State.mode === 'orbit') orbit.update();
       if (frame % 8 === 0) updateNearby();
     }
@@ -4327,6 +4404,9 @@
   function init() {
     // camera & renderer defaults
     camera.rotation.order = 'YXZ';
+    camera.fov = 52;
+    camera.updateProjectionMatrix();
+    document.body.classList.toggle('orbit-mode', State.mode === 'orbit');
     player.y = groundHeight(player.x, player.z);
 
     const paramLang = PARAMS.get('lang');
@@ -4372,6 +4452,7 @@
         setMode('orbit', true);
       } else {
         placeCameraOnPlayer();
+        camFovTarget = 60;
         setMode('walk', true);
       }
       hideLoader();

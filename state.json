@@ -1,7 +1,7 @@
 {
   "project": "wat-arun-3d",
   "title": "Wat Arun 3D — Virtual Riverside Sanctuary & Walkthrough Studio",
-  "description": "A complete, self-contained interactive 3D walkthrough of Wat Arun (Temple of Dawn) on the Chao Phraya River in Bangkok, built in vanilla HTML5, CSS3 and ES6 with Three.js r128. It models the central Phra Prang with three circumambulatory galleries and a gilded finial, four satellite prangs, four corner mondops, an ubosot guarded by Thotsakan and Sahassa Deja, a six-sala riverfront, and an animated Chao Phraya. Features first-person walking with collision and jumping, a drone orbit mode, five bilingual EN/TH hotspots with narration, three time-of-day lighting presets, a real-time mini-map, Web Audio river/chime/footstep synthesis, photo bookmarks, localStorage autosave and portable JSON tour-journal export/import.",
+  "description": "A complete, self-contained interactive 3D walkthrough of Wat Arun (Temple of Dawn) on the Chao Phraya River in Bangkok, built in vanilla HTML5, CSS3 and ES6 with Three.js r128. It models the central Phra Prang with three circumambulatory galleries and a gilded finial, four satellite prangs, four corner mondops, an ubosot guarded by Thotsakan and Sahassa Deja, a six-sala riverfront, and an animated Chao Phraya. Features hold-and-drag orbit with zoom and pan, first-person walking with collision and jumping, five bilingual EN/TH hotspots with narration, three time-of-day lighting presets, a real-time mini-map, Web Audio river/chime/footstep synthesis, photo bookmarks, localStorage autosave and portable JSON tour-journal export/import.",
   "repository": "https://github.com/somphol/wat-arun-3d",
   "liveDemo": "https://somphol.github.io/wat-arun-3d/",
   "build": {
@@ -11,7 +11,7 @@
     "durationSeconds": 4121,
     "durationHuman": "1h 8m 41s",
     "timezone": "UTC",
-    "includes": "Project scaffold; procedural stucco, porcelain, gold, granite, paving, roof and water textures; eleven-tier central prang with redented corners, three galleries, four steep pilgrim stairs, Indra-on-Erawan niche and gilded finial; four satellite prangs; four corner mondops; ubosot with chofah roof and two yaksha guardians; six green granite river salas; boardwalk, river landing, gate, naga rails, flag masts, planters, trees, blossoms, monks, boats and animated water; first-person walking with collision, sprint, jump and step-up; drone orbit; five bilingual EN/TH hotspots with narration; dawn, sunset and night lighting with floodlights, stars and environment mapping; bilingual UI; mini-map; spatial Web Audio synthesis; photo journal; localStorage autosave; JSON export/import; 28-check self-test; seven screenshots; documentation, licence, notices, robots, sitemap and GitHub Pages deployment."
+    "includes": "Project scaffold; procedural stucco, porcelain, gold, granite, paving, roof and water textures; eleven-tier central prang with redented corners, three galleries, four steep pilgrim stairs, Indra-on-Erawan niche and gilded finial; four satellite prangs; four corner mondops; ubosot with chofah roof and two yaksha guardians; six green granite river salas; boardwalk, river landing, gate, naga rails, flag masts, planters, trees, blossoms, monks, boats and animated water; first-person walking with collision, sprint, jump and step-up; default hold-drag orbit with zoom/pan; five bilingual EN/TH hotspots with narration; dawn, sunset and night lighting with floodlights, stars and environment mapping; bilingual UI; mini-map; spatial Web Audio synthesis; photo journal; localStorage autosave; JSON export/import; 28-check self-test; seven screenshots; documentation, licence, notices, robots, sitemap and GitHub Pages deployment."
   },
   "tokens": {
     "input": 499327,
@@ -135,8 +135,8 @@
     "Seventeen trees with pink frangipani blossoms, hedges, planters, flag masts and saffron-robed monks",
     "First-person walk with WASD/arrow movement, sprint, jump, head bob and distance-synced footsteps",
     "Collision detection against towers, halls, salas, trees, walls, lamps and the river boundary; step-up for ramps and stairs",
-    "Pointer-lock mouse look plus a drag-look fallback",
-    "Drone orbit with 360° rotation, pitch limits, zoom 16–270 m and target panning",
+    "Hold-and-drag look with zoom, plus an optional immersive pointer-lock mode in the field guide",
+    "Default Explore orbit with hold-and-drag rotation, wheel zoom, pitch limits, 16–270 m distance and right-drag panning",
     "Five floating hotspots with pulsing sprites, beams and ground rings; proximity auto-open, click and E-key interaction",
     "Bilingual English/Thai hotspot cards with three paragraphs, a pull quote and device-voice narration",
     "Instant EN/TH switching across every label, description, zone, hint and toast",

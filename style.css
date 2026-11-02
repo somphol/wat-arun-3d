@@ -320,6 +320,9 @@ html[data-lang="th"] .selftest h2{font-family:'Noto Serif Thai','Noto Sans Thai'
   backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
 }
 .hint-bar span{display:inline-flex; align-items:center; gap:5px; white-space:nowrap}
+.hint-bar .only-orbit{display:none}
+body.orbit-mode .hint-bar .only-walk{display:none}
+body.orbit-mode .hint-bar .only-orbit{display:inline-flex}
 kbd{
   display:inline-block; min-width:17px; padding:2px 5px; border-radius:2px;
   border:1px solid rgba(255,255,255,.16); border-bottom-color:rgba(0,0,0,.5);
@@ -551,6 +554,7 @@ html[data-lang="en"] .modal-content h2{letter-spacing:.02em}
   .modal-visual-meta{margin-top:48px}
   .modal-content{padding:18px 16px 22px}
   .modal-actions .btn{flex:1 1 auto}
+  #help-mouselook{display:none}
   .intro{padding:12px}
   .intro-card{padding:22px 18px; max-height:92vh; overflow:auto}
   .intro-title{font-size:38px}

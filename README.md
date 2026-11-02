@@ -41,7 +41,7 @@ The whole experience is a single static site. Open `index.html` from a web serve
 | Central prang | ~76 m procedural tower, three circumambulatory galleries, four steep pilgrim stairs, gilded finial |
 | Courtyard | 4 satellite prangs · 4 corner mondops · ubosot with two yaksha guardians · 6 riverside salas |
 | Interactivity | 5 bilingual hotspots with narration, 3 lighting presets, photo journal, JSON export/import |
-| Navigation | First-person walk with collision + jump, or a 360° drone orbit |
+| Navigation | Hold-and-drag 3D orbit (zoom + pan) or a first-person walk with collision + jump |
 | Audio | Web Audio synthesised river, wind chimes, footsteps; SpeechSynthesis narration |
 
 ---
@@ -50,9 +50,9 @@ The whole experience is a single static site. Open `index.html` from a web serve
 
 ### A courtyard you can walk
 
-- **First-person walkthrough** with WASD / arrow keys, mouse look through PointerLockControls, `Shift` to sprint, `Space` to jump.
+- **First-person walkthrough** with WASD / arrow keys, hold-and-drag look, `Shift` to sprint, `Space` to jump. The mouse is never captured unless you explicitly ask for immersive mouse look.
 - **Collision detection** against the prang, satellite towers, mondops, ubosot, salas, trees, walls and the river boundary, with step-up handling for the terrace ramp and the gate.
-- **Drone flyover** with OrbitControls: 360° yaw, pitch to the horizon, and zoom from river level to the finial.
+- **Drone flyover** with OrbitControls: hold-and-drag to orbit, wheel to zoom, right-drag to pan, from river level to the finial. This is the default entry view.
 - Switch modes from the HUD at any time; the walk position is preserved when you return from the drone.
 
 ### A bilingual sanctuary
@@ -87,7 +87,7 @@ The layout reflows at 960 px and 760 px: the hotspot list becomes a drawer, the 
 | 04 | **Chao Phraya River Landing Pier** | ท่าเรือริมแม่น้ำเจ้าพระยา | The six-sala riverfront |
 | 05 | **Indra on Erawan, the Three-Headed Elephant** | พระอินทร์ทรงช้างเอราวัณ | Upper east niche of the prang |
 
-Each hotspot is also a waypoint on the mini-map: gold before your visit, green afterwards. Hovering a marker with the pointer locked shows a *Read:* prompt under the crosshair.
+Each hotspot is also a waypoint on the mini-map: gold before your visit, green afterwards. Hovering a marker shows a *Read:* prompt; click it, choose it from the list, or press `E` near it.
 
 ---
 
@@ -105,21 +105,25 @@ The lighting rig uses a shadow-casting directional sun, hemisphere and ambient f
 
 ## Controls
 
+Navigation never captures the mouse on entry. The default **Explore** view is a normal 3D camera: hold the left button and drag to orbit, scroll to zoom, and right-drag to pan. **Walk** mode uses the same hold-and-drag vocabulary to look around, with WASD to move and the wheel to zoom. Continuous pointer-lock mouse look is available only as an explicit opt-in in the field guide (*Help → Immersive mouse look*), because it is easy to trigger accidentally.
+
 ### First person
 
 | Input | Action |
 | --- | --- |
+| Hold left mouse + drag | Look around (no pointer capture) |
+| Mouse wheel | Zoom the view in and out |
 | `W` `A` `S` `D` / arrow keys | Walk |
 | `Shift` | Sprint |
 | `Space` | Jump |
-| Mouse | Look (pointer lock; click the scene to capture) |
-| `E` | Read the hotspot under the crosshair or the nearest one |
+| `E` | Read the hotspot under the cursor or the nearest one |
+| Help → *Immersive mouse look* | Optional pointer capture; `Esc` releases |
 | `M` | Show/hide the mini-map |
 | `P` | Photo bookmark |
 | `G` | Open the photo journal |
 | `1` | Reset the drone camera (in drone mode) |
 | `H` | Field guide |
-| `Esc` | Release the pointer / close a card |
+| `Esc` | Release pointer lock (if enabled) / close a card |
 
 ### Drone
 
@@ -192,7 +196,7 @@ There are no audio files. Everything is synthesised live:
 - **Footsteps** — short band-passed noise bursts whose timing follows the distance actually walked, with a low thump when sprinting.
 - **Narration** — the browser's SpeechSynthesis voices, with `th-TH` selected for Thai and `en-US` for English when available. If the device has no Thai voice, the card says so and the text remains.
 
-The audio graph is created on the first user gesture (the *Enter the Sanctuary* button) to satisfy autoplay policies. Sound can be muted from the header.
+The audio graph is created on the first user gesture (the *Explore in 3D* button) to satisfy autoplay policies. Sound can be muted from the header.
 
 ---
 
@@ -233,7 +237,7 @@ python3 -m http.server 8080
 # open http://localhost:8080
 ```
 
-Opening `index.html` directly from the filesystem mostly works, but a local server is recommended so that pointer lock, fonts and storage behave consistently. Three.js r128, PointerLockControls and OrbitControls are loaded from CDNs, so an internet connection is needed on first load. Fonts come from Google Fonts.
+Opening `index.html` directly from the filesystem mostly works, but a local server is recommended so that optional pointer lock, fonts and storage behave consistently. Three.js r128, PointerLockControls and OrbitControls are loaded from CDNs, so an internet connection is needed on first load. Fonts come from Google Fonts.
 
 ---
 
