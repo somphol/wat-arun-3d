@@ -7,21 +7,21 @@
   "build": {
     "sessionStartedAt": "2026-11-02T04:23:32Z",
     "startedAt": "2026-11-02T04:23:32Z",
-    "packagedAt": "2026-11-02T05:29:16Z",
-    "durationSeconds": 3944,
-    "durationHuman": "1h 5m 44s",
+    "packagedAt": "2026-11-02T05:32:13Z",
+    "durationSeconds": 4121,
+    "durationHuman": "1h 8m 41s",
     "timezone": "UTC",
     "includes": "Project scaffold; procedural stucco, porcelain, gold, granite, paving, roof and water textures; eleven-tier central prang with redented corners, three galleries, four steep pilgrim stairs, Indra-on-Erawan niche and gilded finial; four satellite prangs; four corner mondops; ubosot with chofah roof and two yaksha guardians; six green granite river salas; boardwalk, river landing, gate, naga rails, flag masts, planters, trees, blossoms, monks, boats and animated water; first-person walking with collision, sprint, jump and step-up; drone orbit; five bilingual EN/TH hotspots with narration; dawn, sunset and night lighting with floodlights, stars and environment mapping; bilingual UI; mini-map; spatial Web Audio synthesis; photo journal; localStorage autosave; JSON export/import; 28-check self-test; seven screenshots; documentation, licence, notices, robots, sitemap and GitHub Pages deployment."
   },
   "tokens": {
-    "input": 490057,
-    "output": 118462,
-    "reasoning": 115075,
-    "cacheRead": 20549760,
+    "input": 499327,
+    "output": 124585,
+    "reasoning": 116672,
+    "cacheRead": 22888832,
     "cacheWrite": 1548,
-    "total": 723594,
-    "totalWithCache": 21274902,
-    "note": "Snapshot from the OpenCode session record at 2026-11-02T05:29:16Z. total = input + output + reasoning. Cache reads/writes are context-usage figures and are reported separately. Writing and committing this state file, the final push, and the closing response happen after this snapshot, so the live session totals are marginally higher."
+    "total": 740584,
+    "totalWithCache": 23630964,
+    "note": "Snapshot from the OpenCode session record at 2026-11-02T05:32:13Z. total = input + output + reasoning. Cache reads/writes are context-usage figures and are reported separately. The final state-file commit, Pages rebuild and closing response happen after this snapshot, so the live session totals are marginally higher."
   },
   "cost": {
     "usd": 0.0,

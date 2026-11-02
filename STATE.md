@@ -5,8 +5,8 @@
 | Project | Wat Arun 3D — Virtual Riverside Sanctuary & Walkthrough Studio (`wat-arun-3d`) |
 | Session started | 2026-11-02 04:23:32 UTC |
 | Build started | 2026-11-02 04:23:32 UTC |
-| Packaged | 2026-11-02 05:29:16 UTC |
-| Build duration | **1h 5m 44s** (3,944 seconds) |
+| Packaged | 2026-11-02 05:32:13 UTC |
+| Build duration | **1h 8m 41s** (4,121 seconds) |
 | Harness | OpenCode 2.2.5 |
 | Model | DeepSeek V4.1 Flash (`opencode-go/deepseek-v4.1-flash`) |
 | Session | `ses_e658073f3ffekRYx9rxH0YtBA0` |
@@ -18,15 +18,15 @@
 
 | Metric | Tokens |
 | --- | ---: |
-| Input | 490,057 |
-| Output | 118,462 |
-| Reasoning | 115,075 |
-| **Total (input + output + reasoning)** | **723,594** |
-| Cache read | 20,549,760 |
+| Input | 499,327 |
+| Output | 124,585 |
+| Reasoning | 116,672 |
+| **Total (input + output + reasoning)** | **740,584** |
+| Cache read | 22,888,832 |
 | Cache write | 1,548 |
-| Total including cache | 21,274,902 |
+| Total including cache | 23,630,964 |
 
-> Snapshot from the OpenCode session record at 2026-11-02 05:29:16 UTC. Total cost reported by the session: **$0.00**. Writing and committing this state file, the final GitHub push and the closing response happen after this snapshot, so the live session totals are marginally higher. Cache reads/writes are context-usage figures and are reported separately from the input/output/reasoning total.
+> Snapshot from the OpenCode session record at 2026-11-02 05:32:13 UTC. Total cost reported by the session: **$0.00**. Writing and committing this state file, the final GitHub push and the closing response happen after this snapshot, so the live session totals are marginally higher. Cache reads/writes are context-usage figures and are reported separately from the input/output/reasoning total.
 
 ## What was built
 
