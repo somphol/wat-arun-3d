@@ -1,0 +1,187 @@
+{
+  "project": "wat-arun-3d",
+  "title": "Wat Arun 3D — Virtual Riverside Sanctuary & Walkthrough Studio",
+  "description": "A complete, self-contained interactive 3D walkthrough of Wat Arun (Temple of Dawn) on the Chao Phraya River in Bangkok, built in vanilla HTML5, CSS3 and ES6 with Three.js r128. It models the central Phra Prang with three circumambulatory galleries and a gilded finial, four satellite prangs, four corner mondops, an ubosot guarded by Thotsakan and Sahassa Deja, a six-sala riverfront, and an animated Chao Phraya. Features first-person walking with collision and jumping, a drone orbit mode, five bilingual EN/TH hotspots with narration, three time-of-day lighting presets, a real-time mini-map, Web Audio river/chime/footstep synthesis, photo bookmarks, localStorage autosave and portable JSON tour-journal export/import.",
+  "repository": "https://github.com/somphol/wat-arun-3d",
+  "liveDemo": "https://somphol.github.io/wat-arun-3d/",
+  "build": {
+    "sessionStartedAt": "2026-11-02T04:23:32Z",
+    "startedAt": "2026-11-02T04:23:32Z",
+    "packagedAt": "2026-11-02T05:29:16Z",
+    "durationSeconds": 3944,
+    "durationHuman": "1h 5m 44s",
+    "timezone": "UTC",
+    "includes": "Project scaffold; procedural stucco, porcelain, gold, granite, paving, roof and water textures; eleven-tier central prang with redented corners, three galleries, four steep pilgrim stairs, Indra-on-Erawan niche and gilded finial; four satellite prangs; four corner mondops; ubosot with chofah roof and two yaksha guardians; six green granite river salas; boardwalk, river landing, gate, naga rails, flag masts, planters, trees, blossoms, monks, boats and animated water; first-person walking with collision, sprint, jump and step-up; drone orbit; five bilingual EN/TH hotspots with narration; dawn, sunset and night lighting with floodlights, stars and environment mapping; bilingual UI; mini-map; spatial Web Audio synthesis; photo journal; localStorage autosave; JSON export/import; 28-check self-test; seven screenshots; documentation, licence, notices, robots, sitemap and GitHub Pages deployment."
+  },
+  "tokens": {
+    "input": 490057,
+    "output": 118462,
+    "reasoning": 115075,
+    "cacheRead": 20549760,
+    "cacheWrite": 1548,
+    "total": 723594,
+    "totalWithCache": 21274902,
+    "note": "Snapshot from the OpenCode session record at 2026-11-02T05:29:16Z. total = input + output + reasoning. Cache reads/writes are context-usage figures and are reported separately. Writing and committing this state file, the final push, and the closing response happen after this snapshot, so the live session totals are marginally higher."
+  },
+  "cost": {
+    "usd": 0.0,
+    "note": "As reported by the OpenCode session record."
+  },
+  "sessionId": "ses_e658073f3ffekRYx9rxH0YtBA0",
+  "sessionTitle": "Wat Arun 3D walkthrough project",
+  "model": {
+    "name": "DeepSeek V4.1 Flash",
+    "providerID": "opencode-go",
+    "modelID": "deepseek-v4.1-flash"
+  },
+  "harness": {
+    "name": "OpenCode",
+    "version": "2.2.5",
+    "url": "https://opencode.ai"
+  },
+  "stack": {
+    "runtime": [
+      "HTML5",
+      "CSS3",
+      "ES6 JavaScript"
+    ],
+    "graphics": [
+      "Three.js r128",
+      "PointerLockControls r128",
+      "OrbitControls r128"
+    ],
+    "audio": [
+      "Web Audio API synthesis",
+      "SpeechSynthesis narration (device voices)"
+    ],
+    "storage": [
+      "localStorage",
+      "JSON file export/import"
+    ],
+    "fonts": [
+      "Cinzel",
+      "Inter",
+      "Noto Sans Thai",
+      "Noto Serif Thai"
+    ],
+    "hosting": [
+      "GitHub Pages"
+    ]
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 16649,
+      "lines": 304
+    },
+    {
+      "path": "style.css",
+      "bytes": 31807,
+      "lines": 575
+    },
+    {
+      "path": "script.js",
+      "bytes": 195499,
+      "lines": 4445
+    },
+    {
+      "path": "README.md",
+      "bytes": 17355,
+      "lines": 304
+    },
+    {
+      "path": "STATE.md",
+      "bytes": 8173,
+      "lines": 127
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 1576,
+      "lines": 43
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1073,
+      "lines": 21
+    },
+    {
+      "path": "favicon.svg",
+      "bytes": 589,
+      "lines": 13
+    }
+  ],
+  "screenshots": [
+    "screenshot.png",
+    "screenshot-walk.png",
+    "screenshot-sunset.png",
+    "screenshot-night.png",
+    "screenshot-hotspot.png",
+    "screenshot-thai.png",
+    "screenshot-mobile.png"
+  ],
+  "features": [
+    "Central Phra Prang of eleven tapering tiers, ~76 m tall, with redented corner buttresses, porcelain niches, gold cornices and friezes",
+    "Three circumambulatory galleries with balustrades, rails and gold corner spires",
+    "Four steep pilgrim staircases, four base stairways and a multi-pronged gilded finial",
+    "Gilded Indra on the three-headed elephant Erawan in the upper east niche",
+    "Four satellite prangs on the diagonal corners",
+    "Four corner mondops with columns, mosaic plinths, tiled roofs and gold finials",
+    "Ubosot with a five-bay porch, gilded doors and windows, steep tiled roof, chofah finials and two guardians",
+    "Thotsakan in green ceramic armour and Sahassa Deja in white, with tiered crowns, clubs, bared fangs and glowing eyes",
+    "Six green granite river salas with two-tier roofs, upturned gold eaves, benches and hanging lanterns",
+    "Raised stone boardwalk, river railing, mooring bollards, lamp posts, landing steps and a ceremonial gate with naga rails",
+    "Animated Chao Phraya with a seamless value-noise normal map, sky reflection and a gold reflection path",
+    "Three drifting long-tail boats with canopies, long-tail shafts and wakes",
+    "Seventeen trees with pink frangipani blossoms, hedges, planters, flag masts and saffron-robed monks",
+    "First-person walk with WASD/arrow movement, sprint, jump, head bob and distance-synced footsteps",
+    "Collision detection against towers, halls, salas, trees, walls, lamps and the river boundary; step-up for ramps and stairs",
+    "Pointer-lock mouse look plus a drag-look fallback",
+    "Drone orbit with 360° rotation, pitch limits, zoom 16–270 m and target panning",
+    "Five floating hotspots with pulsing sprites, beams and ground rings; proximity auto-open, click and E-key interaction",
+    "Bilingual English/Thai hotspot cards with three paragraphs, a pull quote and device-voice narration",
+    "Instant EN/TH switching across every label, description, zone, hint and toast",
+    "Three lighting presets: Golden Dawn, Sunset Glow and Night Illumination",
+    "Six warm floodlights, three promenade point lights, stars, clouds, moon fill and an environment map generated from the sky",
+    "Real-time top-down mini-map with courtyard plan, river, player position and view cone",
+    "Web Audio river bed with slow LFO, pentatonic wind chimes and synthesised footsteps",
+    "Photo bookmarks captured from the WebGL canvas and stored as compact JPEG data URLs",
+    "Autosave of visits, photos, language, preset and audio settings to localStorage",
+    "Portable watarun_3d_journal.json export and import, including photo thumbnails",
+    "Responsive desktop, tablet and phone layouts with a touch look area, four-way pad and hotspot drawer",
+    "28-check self-test at ?selftest=1",
+    "GitHub Pages deployment"
+  ],
+  "verification": {
+    "selfTest": "28/28 PASS",
+    "selfTestUrl": "https://somphol.github.io/wat-arun-3d/?selftest=1",
+    "browser": "Headless Google Chrome 156.0.8078.79 with SwiftShader WebGL",
+    "screenshots": "1600×1000 desktop and 500×900 mobile captured from the running build; live deployment re-tested at 28/28",
+    "checked": [
+      "Three.js r128 and the WebGL renderer",
+      "The courtyard scene graph and the ~76 m central prang",
+      "Four satellite prangs, four mondops, six salas and two yakshas",
+      "Five bilingual hotspots, five DOM rows and five marker sprites",
+      "The mini-map canvas",
+      "Three lighting presets and a working preset transition",
+      "Six floodlights, the sky dome and the star field",
+      "The animated water surface",
+      "Ground heights on the terrace and boardwalk",
+      "Collision resolution at the prang centre",
+      "PointerLockControls and OrbitControls",
+      "Hotspot card open/close and bilingual body copy",
+      "The Web Audio context and synthesis API",
+      "Journal payload shape and filename",
+      "Live EN ↔ TH switching",
+      "Photo capture to a JPEG data URL",
+      "localStorage persistence across a reload",
+      "Zero uncaught runtime errors"
+    ]
+  },
+  "credits": {
+    "builtWith": "OpenCode 2.2.5 + DeepSeek V4.1 Flash (opencode-go/deepseek-v4.1-flash)",
+    "author": "Somphol Boonjing",
+    "license": "MIT",
+    "thirdParty": "Three.js r128, PointerLockControls and OrbitControls (MIT); Cinzel, Inter, Noto Sans Thai and Noto Serif Thai from Google Fonts (SIL OFL 1.1). All geometry, textures, copy and audio synthesis are original to this project. No third-party photographs, models or recordings are used.",
+    "culturalNote": "Independent educational homage. Not affiliated with Wat Arun Ratchawararam Ratchaworawihan."
+  }
+}

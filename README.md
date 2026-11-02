@@ -242,7 +242,7 @@ Opening `index.html` directly from the filesystem mostly works, but a local serv
 The app ships with a built-in self-test: open `?selftest=1`.
 
 ```
-27 / 27 checks passed
+28 / 28 checks passed
 ```
 
 It verifies:
@@ -261,6 +261,7 @@ It verifies:
 - the Web Audio context and synthesis API
 - journal payload shape and filename
 - live EN ↔ TH switching
+- hotspot card open/close and three paragraphs of body copy
 - photo capture to a JPEG data URL
 - localStorage persistence
 - zero uncaught runtime errors
