@@ -5,8 +5,8 @@
 | Project | Wat Arun 3D — Virtual Riverside Sanctuary & Walkthrough Studio (`wat-arun-3d`) |
 | Session started | 2026-11-02 04:23:32 UTC |
 | Build started | 2026-11-02 04:23:32 UTC |
-| Packaged | 2026-11-02 05:32:13 UTC |
-| Build duration | **1h 8m 41s** (4,121 seconds) |
+| Packaged | 2026-11-02 05:53:57 UTC |
+| Build duration | **1h 30m 24s** (5,424 seconds) |
 | Harness | OpenCode 2.2.5 |
 | Model | DeepSeek V4.1 Flash (`opencode-go/deepseek-v4.1-flash`) |
 | Session | `ses_e658073f3ffekRYx9rxH0YtBA0` |
@@ -18,15 +18,15 @@
 
 | Metric | Tokens |
 | --- | ---: |
-| Input | 499,327 |
-| Output | 124,585 |
-| Reasoning | 116,672 |
-| **Total (input + output + reasoning)** | **740,584** |
-| Cache read | 22,888,832 |
+| Input | 563,985 |
+| Output | 139,300 |
+| Reasoning | 149,346 |
+| **Total (input + output + reasoning)** | **852,631** |
+| Cache read | 32,178,304 |
 | Cache write | 1,548 |
-| Total including cache | 23,630,964 |
+| Total including cache | 33,032,483 |
 
-> Snapshot from the OpenCode session record at 2026-11-02 05:32:13 UTC. Total cost reported by the session: **$0.00**. Writing and committing this state file, the final GitHub push and the closing response happen after this snapshot, so the live session totals are marginally higher. Cache reads/writes are context-usage figures and are reported separately from the input/output/reasoning total.
+> Snapshot from the OpenCode session record at 2026-11-02 05:53:57 UTC, after the navigation revision. Total cost reported by the session: **$0.00**. Writing and committing this state file, the final GitHub push and the closing response happen after this snapshot, so the live session totals are marginally higher. Cache reads/writes are context-usage figures and are reported separately from the input/output/reasoning total.
 
 ## What was built
 
@@ -76,14 +76,14 @@ A complete, self-contained 3D walkthrough of Wat Arun in Bangkok in three modula
 
 | File | Size |
 | --- | ---: |
-| `index.html` | 16,649 bytes · 304 lines |
-| `style.css` | 31,807 bytes · 575 lines |
-| `script.js` | 195,499 bytes · 4,445 lines |
-| `README.md` | 17,295 bytes · 303 lines |
-| `screenshot.png` | 1.12 MB |
+| `index.html` | 17,550 bytes · 311 lines |
+| `style.css` | 31,985 bytes · 579 lines |
+| `script.js` | 199,902 bytes · 4,526 lines |
+| `README.md` | 18,092 bytes · 308 lines |
+| `screenshot.png` | 1.22 MB |
 | `screenshot-walk.png` | 1.22 MB |
-| `screenshot-sunset.png` | 1.03 MB |
-| `screenshot-night.png` | 1.01 MB |
+| `screenshot-sunset.png` | 1.11 MB |
+| `screenshot-night.png` | 1.10 MB |
 | `screenshot-hotspot.png` | 553 KB |
 | `screenshot-thai.png` | 527 KB |
 | `screenshot-mobile.png` | 363 KB |

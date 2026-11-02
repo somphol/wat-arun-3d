@@ -7,21 +7,21 @@
   "build": {
     "sessionStartedAt": "2026-11-02T04:23:32Z",
     "startedAt": "2026-11-02T04:23:32Z",
-    "packagedAt": "2026-11-02T05:32:13Z",
-    "durationSeconds": 4121,
-    "durationHuman": "1h 8m 41s",
+    "packagedAt": "2026-11-02T05:53:57Z",
+    "durationSeconds": 5424,
+    "durationHuman": "1h 30m 24s",
     "timezone": "UTC",
-    "includes": "Project scaffold; procedural stucco, porcelain, gold, granite, paving, roof and water textures; eleven-tier central prang with redented corners, three galleries, four steep pilgrim stairs, Indra-on-Erawan niche and gilded finial; four satellite prangs; four corner mondops; ubosot with chofah roof and two yaksha guardians; six green granite river salas; boardwalk, river landing, gate, naga rails, flag masts, planters, trees, blossoms, monks, boats and animated water; first-person walking with collision, sprint, jump and step-up; default hold-drag orbit with zoom/pan; five bilingual EN/TH hotspots with narration; dawn, sunset and night lighting with floodlights, stars and environment mapping; bilingual UI; mini-map; spatial Web Audio synthesis; photo journal; localStorage autosave; JSON export/import; 28-check self-test; seven screenshots; documentation, licence, notices, robots, sitemap and GitHub Pages deployment."
+    "includes": "Project scaffold; procedural stucco, porcelain, gold, granite, paving, roof and water textures; eleven-tier central prang with redented corners, three galleries, four steep pilgrim stairs, Indra-on-Erawan niche and gilded finial; four satellite prangs; four corner mondops; ubosot with chofah roof and two yaksha guardians; six green granite river salas; boardwalk, river landing, gate, naga rails, flag masts, planters, trees, blossoms, monks, boats and animated water; hold-drag first-person walking with collision, sprint, jump, wheel zoom and step-up; default hold-drag orbit with wheel zoom and right-drag pan; five bilingual EN/TH hotspots with narration; dawn, sunset and night lighting with floodlights, stars and environment mapping; bilingual UI; mini-map; spatial Web Audio synthesis; photo journal; localStorage autosave; JSON export/import; 28-check self-test; seven screenshots; documentation, licence, notices, robots, sitemap and GitHub Pages deployment."
   },
   "tokens": {
-    "input": 499327,
-    "output": 124585,
-    "reasoning": 116672,
-    "cacheRead": 22888832,
+    "input": 563985,
+    "output": 139300,
+    "reasoning": 149346,
+    "cacheRead": 32178304,
     "cacheWrite": 1548,
-    "total": 740584,
-    "totalWithCache": 23630964,
-    "note": "Snapshot from the OpenCode session record at 2026-11-02T05:32:13Z. total = input + output + reasoning. Cache reads/writes are context-usage figures and are reported separately. The final state-file commit, Pages rebuild and closing response happen after this snapshot, so the live session totals are marginally higher."
+    "total": 852631,
+    "totalWithCache": 33032483,
+    "note": "Snapshot from the OpenCode session record at 2026-11-02T05:53:57Z, after the navigation revision. total = input + output + reasoning. Cache reads/writes are context-usage figures and are reported separately. The final state-file commit, Pages rebuild and closing response happen after this snapshot, so the live session totals are marginally higher."
   },
   "cost": {
     "usd": 0.0,
@@ -71,27 +71,27 @@
   "files": [
     {
       "path": "index.html",
-      "bytes": 16649,
-      "lines": 304
+      "bytes": 17550,
+      "lines": 311
     },
     {
       "path": "style.css",
-      "bytes": 31807,
-      "lines": 575
+      "bytes": 31985,
+      "lines": 579
     },
     {
       "path": "script.js",
-      "bytes": 195499,
-      "lines": 4445
+      "bytes": 199902,
+      "lines": 4526
     },
     {
       "path": "README.md",
-      "bytes": 17355,
-      "lines": 304
+      "bytes": 18092,
+      "lines": 308
     },
     {
       "path": "STATE.md",
-      "bytes": 8173,
+      "bytes": 8213,
       "lines": 127
     },
     {
