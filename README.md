@@ -25,6 +25,7 @@ An interactive, first-person and drone walkthrough of **Wat Arun Ratchawararam**
 - [Verification](#verification)
 - [Accessibility & performance](#accessibility--performance)
 - [Cultural notes](#cultural-notes)
+- [Documentation](#documentation)
 - [Credits](#credits)
 - [License](#license)
 
@@ -216,6 +217,9 @@ wat-arun-3d/
 ├── screenshot-thai.png        # Thai hotspot card
 ├── screenshot-mobile.png      # mobile drone view
 ├── README.md
+├── AGENTS.md                  # maintainer handoff
+├── CHANGELOG.md
+├── docs/                      # architecture, reproduction, deployment, testing
 ├── STATE.md / state.json      # build record: time, tokens, credits
 ├── THIRD_PARTY_NOTICES.md
 ├── LICENSE
@@ -290,6 +294,22 @@ Screenshots in this repository were captured from the running build in headless 
 This is an **educational homage**, not an official reconstruction and not affiliated with Wat Arun Ratchawararam Ratchaworawihan. Proportions, colours and decorative details are stylised for real-time rendering. The prang's height, the Ramakien guardians, the Chinese porcelain mosaic tradition, the six river salas and the Indra-Erawan niche are presented as faithfully as a small procedural model allows, but the real temple is more complex, more weathered and more beautiful than any polygon budget can hold.
 
 Please treat the site and the temple with respect: cover shoulders and knees when visiting in person, do not climb where climbing is prohibited, and remember that the ordination hall is a consecrated space.
+
+---
+
+## Documentation
+
+| Document | Purpose |
+| --- | --- |
+| [README.md](README.md) | Overview, features, controls, modelling and local run |
+| [AGENTS.md](AGENTS.md) | Handoff for the next maintainer or agent |
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | File map, state, world construction, navigation, journal |
+| [docs/REPRODUCTION.md](docs/REPRODUCTION.md) | How to rebuild the project from scratch |
+| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Pages hosting, CDN dependencies, rollback |
+| [docs/TESTING.md](docs/TESTING.md) | Evidence, headless checks, manual test matrix |
+| [CHANGELOG.md](CHANGELOG.md) | Notable changes and release history |
+| [STATE.md](STATE.md) | Build receipt and token snapshot |
+| [LICENSE](LICENSE) | MIT licence |
 
 ---
 
